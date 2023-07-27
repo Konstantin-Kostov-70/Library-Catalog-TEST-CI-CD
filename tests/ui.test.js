@@ -89,18 +89,18 @@ test('Add book with empty field', async ({ page }) => {
     expect(page.url()).toBe('http://localhost:3000/create');
 });
 
-// test('Login and verify all book are displayed', async ({ page }) => {
-//     await page.goto('http://localhost:3000/login');
-//     await page.fill('input[name="email"]', 'peter@abv.bg');
-//     await page.fill('input[name="password"]', '123456');
-//     await Promise.all([
-//         await page.click('input[type="submit"]'),
-//         await page.waitForURL('http://localhost:3000/catalog')
-//     ]);
-//     await page.waitForSelector('.dashboard')
-//     const bookElements = await page.$$('.other-books-list li')
-//     expect(bookElements.length).toBeGreaterThan(0);
-// });
+test('Login and verify all book are displayed', async ({ page }) => {
+    await page.goto('http://localhost:3000/login');
+    await page.fill('input[name="email"]', 'peter@abv.bg');
+    await page.fill('input[name="password"]', '123456');
+    await Promise.all([
+        await page.click('input[type="submit"]'),
+        await page.waitForURL('http://localhost:3000/catalog')
+    ]);
+    await page.waitForSelector('.dashboard')
+    const bookElements = await page.$$('.other-books-list li')
+    expect(bookElements.length).toBeGreaterThan(0);
+});
 
 
 // test('Login and navigate to details page', async ({ page }) => {
