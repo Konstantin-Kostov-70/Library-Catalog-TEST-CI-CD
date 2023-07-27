@@ -8,13 +8,13 @@ test('Verify "All Books" link is visible', async ({ page }) => {
     expect(isLinkVisible).toBe(true);
 });
 
-// test('Verify "Login" button is visible', async ({ page }) => {
-//     await page.goto('http://localhost:3000');
-//     await page.waitForSelector('nav.navbar');
-//     const loginButton = await page.$('a[href="/login"]');
-//     const isLoginButtonVisible = await loginButton.isVisible();
-//     expect(isLoginButtonVisible).toBe(true);
-// });
+test('Verify "Login" button is visible', async ({ page }) => {
+    await page.goto('http://localhost:3000');
+    await page.waitForSelector('nav.navbar');
+    const loginButton = await page.$('a[href="/login"]');
+    const isLoginButtonVisible = await loginButton.isVisible();
+    expect(isLoginButtonVisible).toBe(true);
+});
 
 // test('Verify "All Books" link is visible after user login', async ({ page }) => {
 //     await page.goto('http://localhost:3000/login');
