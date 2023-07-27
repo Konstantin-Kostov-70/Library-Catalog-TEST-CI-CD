@@ -26,14 +26,14 @@ test('Verify "All Books" link is visible after user login', async ({ page }) => 
     expect(isLinkVisible).toBe(true);
 });
 
-// test('Login with valid credentials', async ({ page }) => {
-//     await page.goto('http://localhost:3000/login');
-//     await page.fill('input[name="email"]', 'peter@abv.bg');
-//     await page.fill('input[name="password"]', '123456');
-//     await page.click('input[type="submit"]');
-//     await page.$('a[href="/catalog"]');
-//     expect(page.url()).toBe('http://localhost:3000/catalog');
-// });
+test('Login with valid credentials', async ({ page }) => {
+    await page.goto('http://localhost:3000/login');
+    await page.fill('input[name="email"]', 'peter@abv.bg');
+    await page.fill('input[name="password"]', '123456');
+    await page.click('input[type="submit"]');
+    await page.$('a[href="/catalog"]');
+    expect(page.url()).toBe('http://localhost:3000/catalog');
+});
 
 // test('Login with empty fields', async ({ page }) => {
 //     await page.goto('http://localhost:3000/login');
