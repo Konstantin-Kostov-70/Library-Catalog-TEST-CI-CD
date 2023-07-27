@@ -129,6 +129,7 @@ test('Verify logout button is visible after user login', async ({ page }) => {
     expect(isLinkVisible).toBe(true);
 });
 
+
 test('Verify redirection of Logout Link after user login', async ({ page }) => {
     await page.goto('http://localhost:3000/login');
     await page.fill('input[name="email"]', 'peter@abv.bg');
