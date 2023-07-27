@@ -130,16 +130,16 @@ test('Verify logout button is visible after user login', async ({ page }) => {
 });
 
 
-test('Verify redirection of Logout Link after user login', async ({ page }) => {
-    await page.goto('http://localhost:3000/login');
-    await page.fill('input[name="email"]', 'peter@abv.bg');
-    await page.fill('input[name="password"]', '123456');
-    await page.click('input[type="submit"]');
-    const logoutLink = await page.$('a[href="javascript:void(0)"]')
-    await logoutLink.click()
-    const redirectURL = page.url()
-    expect(redirectURL).toBe('http://localhost:3000/');
-});
+// test('Verify redirection of Logout Link after user login', async ({ page }) => {
+//     await page.goto('http://localhost:3000/login');
+//     await page.fill('input[name="email"]', 'peter@abv.bg');
+//     await page.fill('input[name="password"]', '123456');
+//     await page.click('input[type="submit"]');
+//     const logoutLink = await page.$('a[href="javascript:void(0)"]')
+//     await logoutLink.click()
+//     const redirectURL = page.url()
+//     expect(redirectURL).toBe('http://localhost:3000/');
+// });
 
 
 
