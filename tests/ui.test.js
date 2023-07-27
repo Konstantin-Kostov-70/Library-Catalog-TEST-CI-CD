@@ -66,28 +66,28 @@ test('Add book with correct data', async ({ page }) => {
     expect(page.url()).toBe('http://localhost:3000/catalog');
 });
 
-// test('Add book with empty field', async ({ page }) => {
-//     await page.goto('http://localhost:3000/login');
-//     await page.fill('input[name="email"]', 'peter@abv.bg');
-//     await page.fill('input[name="password"]', '123456');
-//     await Promise.all([
-//         await page.click('input[type="submit"]'),
-//         await page.waitForURL('http://localhost:3000/catalog')
-//     ]);
-//     await page.click('a[href="/create"]');
-//     await page.waitForSelector('#create-form');
-//     await page.fill('#description', 'This is test book description');
-//     await page.fill('#image', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlMZY1F2L96s7TqGJ99-Pbcaa3vRt2NHL7Q&usqp=CAU');
-//     await page.selectOption('#type', 'Fiction')
-//     await page.click('#create-form input[type="submit"]')
-//     page.on('dialog', async dialog => {
-//         expect(dialog.type()).toContain('alert');
-//         expect(dialog.message()).toContain('All fields are required!');
-//         await dialog.accept()
-//     });
-//     await page.waitForURL('http://localhost:3000/create')
-//     expect(page.url()).toBe('http://localhost:3000/create');
-// });
+test('Add book with empty field', async ({ page }) => {
+    await page.goto('http://localhost:3000/login');
+    await page.fill('input[name="email"]', 'peter@abv.bg');
+    await page.fill('input[name="password"]', '123456');
+    await Promise.all([
+        await page.click('input[type="submit"]'),
+        await page.waitForURL('http://localhost:3000/catalog')
+    ]);
+    await page.click('a[href="/create"]');
+    await page.waitForSelector('#create-form');
+    await page.fill('#description', 'This is test book description');
+    await page.fill('#image', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZlMZY1F2L96s7TqGJ99-Pbcaa3vRt2NHL7Q&usqp=CAU');
+    await page.selectOption('#type', 'Fiction')
+    await page.click('#create-form input[type="submit"]')
+    page.on('dialog', async dialog => {
+        expect(dialog.type()).toContain('alert');
+        expect(dialog.message()).toContain('All fields are required!');
+        await dialog.accept()
+    });
+    await page.waitForURL('http://localhost:3000/create')
+    expect(page.url()).toBe('http://localhost:3000/create');
+});
 
 // test('Login and verify all book are displayed', async ({ page }) => {
 //     await page.goto('http://localhost:3000/login');
